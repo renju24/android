@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/rules_green_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:background="@drawable/roundshape"
+        android:backgroundTint="@color/colorGreen47"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/game_emblema_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rules_green_block"
+        app:layout_constraintEnd_toEndOf="@+id/rules_green_block"
+        app:layout_constraintStart_toStartOf="@+id/rules_green_block"
+        app:layout_constraintTop_toTopOf="@+id/rules_green_block"
+        app:srcCompat="@drawable/emblema"/>
+
+    <TextView
+        android:id="@+id/log_welcome_eng_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/rules_str"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rules_green_block" />
+
+    <ImageView
+        android:id="@+id/board_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_welcome_eng_text2"
+        app:srcCompat="@drawable/rules" />
+
+    <TextView
+        android:id="@+id/rules_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="fill_horizontal"
+        android:text="@string/description"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board_view" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

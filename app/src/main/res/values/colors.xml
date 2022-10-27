@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <!-- Основные цвета -->
+    <color name="colorBlack">#111217</color>
+    <color name="colorGreen">#3D942F</color>
+    <color name="colorYellow">#CFA504</color>
+    <color name="colorWhite">#F8F8F8</color>
+
+    <!-- Оттенки -->
+    <color name="colorGreen47">#783D942F</color>
+    <color name="colorYellow40">#66CFA504</color>
+
+    <color name="colorError">#9E1818</color>
+</resources>

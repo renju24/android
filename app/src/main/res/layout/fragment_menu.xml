@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/menu_green_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:background="@drawable/roundshape"
+        android:backgroundTint="@color/colorGreen47"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/menu_emblema_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_green_block"
+        app:layout_constraintEnd_toEndOf="@+id/menu_green_block"
+        app:layout_constraintStart_toStartOf="@+id/menu_green_block"
+        app:layout_constraintTop_toTopOf="@+id/menu_green_block"
+        app:srcCompat="@drawable/emblema"/>
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+
+        android:layout_marginTop="80dp"
+        android:height="50dp"
+        android:background="@drawable/roundshape"
+        android:backgroundTint="@color/colorGreen47"
+        android:text="@string/new_game_str"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_green_block" />
+
+    <Button
+        android:id="@+id/rules"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:background="@drawable/roundshape"
+        android:backgroundTint="@color/colorGreen47"
+        android:text="@string/rules_str"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_game" />
+
+    <Button
+        android:id="@+id/rank"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:height="50dp"
+        android:background="@drawable/roundshape"
+        android:backgroundTint="@color/colorGreen47"
+        android:text="@string/rank_str"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rules" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
