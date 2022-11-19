@@ -4,27 +4,42 @@
     <string name="welcome_str_eng">Welcome to RenjuLand!</string>
     <string name="welcome_str_rus">Добро пожаловать в Рендзю онлайн!</string>
     <string name="registration_text">Зарегистрируйтесь, чтобы начать</string>
-    <string name="reg_login_str">e-mail</string>
+    <string name="login_name_str">login</string>
+    <string name="reg_email_str">e-mail</string>
     <string name="reg_password_str">password</string>
+    <string name="reg_repeat_password_str">repeat password</string>
     <string name="reg_button_str">Зарегистрироваться</string>
     <string name="reg_to_log_str">У вас уже есть аккаунт?</string>
     <string name="log_in_str">Войти</string>
-
-    <string name="login_name_str">login</string>
-    <string name="aut_str">У вас уже есть аккаунт?</string>
     <string name="log_to_reg_str">Вы ещё не зарегестрированы?</string>
+    <string name="reg_with_str">Зарегистрироваться через</string>
+    <string name="choose_reg_str">Выберите способ регистрации</string>
 
-    <string name="player1_name">Игрок 1</string>
-    <string name="player2_name">Игрок 2</string>
-    <string name="step_str">Ход</string>
-
-
-    <string name="score_str">Счёт</string>
-    <string name="history_str">История</string>
-    <string name="new_game_str">Новая игра</string>
-    <string name="rules_str">Правила</string>
+    <string name="username">RenjuKing</string>
+    <string name="rating">Рейтинг: 0</string>
+    <string name="play">Играть</string>
+    <string name="history_str">История игр</string>
+    <string name="result_str">Результат</string>
     <string name="rank_str">Рейтинг</string>
-    <string name="description">Рэ́ндзю[1] (яп. 連珠) — настольная логическая игра для двух игроков, спортивный вариант крестиков-ноликов до пяти в ряд, сочетающая в себе, кроме спортивных элементов, также элементы искусства и философии[2]. Возникла в Китае более четырёх тысяч лет назад, вариации были известны и цивилизации инков, и Древнему Риму[3][4]. В начале нашей эры игра из Китая попала в Японию, где и получила наибольшее распространение. Принятый спортивный вариант, равно как и название, также родились в Японии. Старые вариации игры известны также под названиями «гомоку» и «гомокунарабэ», что означает «пять камней» и «пять камней в ряд».
+    <string name="players_rating">Общий рейтинг игроков</string>
+    <string name="players_login">Логин</string>
+    <string name="log_and_res">Результат/Логин</string>
 
-Игра подчиняется определённым правилам, которые регулируются единой международной федерацией, RIF[5]. Титульные соревнования (чемпионаты Европы, мира, в том числе заочные) регламентируются непосредственно RIF, соревнования уровнем не выше национальных — соответствующими национальными организациями.</string>
+    <string name="new_game_str">Чтобы начать игру, введите login игрока:</string>
+    <string name="invite_str">Пригласить</string>
+    <string name="table_invite_str">Список приглашений</string>
+    <string name="time_str">5 мин. н.</string>
+    <string name="invite_mess_str">Игрок User приглашает вас в игру!</string>
+    <string name="accept_str">Принять</string>
+    <string name="refuse_str">Отклонить</string>
+
+    <string name="game_player_str">(Вы)</string>
+    <string name="username2">CoolGuy</string>
+    <string name="vs_str">vs</string>
+    <string name="inf_step_str">Информация о ходах</string>
+
+    <string name="err_auth_empty">Заполните оба поля, а затем повторите попытку</string>
+    <string name="err_reg_empty">Вы заполнили не все поля</string>
+    <string name="err_reg_msg">Вы не заполнили поле </string>
+    <string name="err_reg_pass">Пароли не совпадают</string>
 </resources>

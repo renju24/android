@@ -6,13 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/green_block"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/emblema_button_shape" />
+
+    <ImageView
+        android:id="@+id/emblema_image"
+        style="@style/EmblemaImage"
+        app:layout_constraintBottom_toBottomOf="@+id/green_block"
+        app:layout_constraintEnd_toEndOf="@+id/green_block"
+        app:layout_constraintStart_toStartOf="@+id/green_block"
+        app:layout_constraintTop_toTopOf="@+id/green_block"/>
+
+    <ImageButton
+        android:id="@+id/help_button"
+        style="@style/HelpButton"
+        app:layout_constraintBottom_toBottomOf="@+id/green_block"
+        app:layout_constraintEnd_toEndOf="@+id/green_block"
+        app:layout_constraintTop_toTopOf="@+id/green_block" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fitsSystemWindows="true"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/green_block"
+        app:navGraph="@navigation/navigation_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

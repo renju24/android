@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_graph"
+    app:startDestination="@id/authorizationFragment">
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.android.AuthorizationFragment"
+        android:label="AuthorizationFragment" >
+        <action
+            android:id="@+id/action_auth_to_choose"
+            app:destination="@id/chooseRegistrationFragment" />
+        <action
+            android:id="@+id/action_auth_to_profile"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseRegistrationFragment"
+        android:name="com.example.android.ChooseRegistrationFragment"
+        android:label="ChooseRegistrationFragment" >
+        <action
+            android:id="@+id/action_choose_to_reg"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_choose_to_auth"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_choose_to_profile"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.android.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_reg_to_auth"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_reg_to_profile"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.android.UserProfileFragment"
+        android:label="UserProfileFragment" >
+        <action
+            android:id="@+id/action_profile_to_start"
+            app:destination="@id/startGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.example.android.StartGameFragment"
+        android:label="StartGameFragment" >
+        <action
+            android:id="@+id/action_start_to_game"
+            app:destination="@id/gameDeskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDeskFragment"
+        android:name="com.example.android.GameDeskFragment"
+        android:label="GameDeskFragment" />
+</navigation>

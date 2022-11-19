@@ -1,110 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<ImageView
+    android:id="@+id/profile_user_place"
+    style="@style/Place"
+    android:layout_height="80dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+<ImageButton
+    android:id="@+id/profile_user_avatar"
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/avatar"
+    android:elevation="3dp"
+    app:layout_constraintBottom_toBottomOf="@+id/profile_user_place"
+    app:layout_constraintStart_toStartOf="@+id/profile_user_place"
+    app:layout_constraintTop_toTopOf="@+id/profile_user_place" />
+
+<TextView
+    android:id="@+id/profile_username"
+    style="@style/InfoText"
+    android:layout_marginStart="10dp"
+    android:elevation="2dp"
+    android:text="@string/username"
+    app:layout_constraintStart_toEndOf="@+id/profile_user_avatar"
+    app:layout_constraintTop_toTopOf="@+id/profile_user_place" />
+
+<TextView
+    android:id="@+id/profile_rating"
+    style="@style/InfoText"
+    android:layout_marginVertical="10dp"
+    android:layout_marginStart="10dp"
+    android:elevation="2dp"
+    android:text="@string/rating"
+    android:textSize="16sp"
+    app:layout_constraintBottom_toBottomOf="@+id/profile_user_place"
+    app:layout_constraintStart_toEndOf="@+id/profile_user_avatar"
+    app:layout_constraintTop_toBottomOf="@+id/profile_username" />
+
+<Button
+    android:id="@+id/profile_play_button"
+    android:layout_width="120dp"
+    android:layout_height="50dp"
+    android:layout_marginHorizontal="5dp"
+    android:background="@drawable/emblema_button_shape"
+    android:text="@string/play"
+    android:textAllCaps="false"
+    android:textColor="@color/colorBlack"
+    app:layout_constraintBottom_toBottomOf="@+id/profile_user_place"
+    app:layout_constraintEnd_toEndOf="@+id/profile_user_place"
+    app:layout_constraintTop_toTopOf="@+id/profile_user_place" />
+
+
+<TextView
+    android:id="@+id/profile_history"
+    style="@style/InfoText"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_marginHorizontal="5dp"
+    android:height="30dp"
+    android:background="@drawable/table_shape"
+    android:gravity="center_horizontal"
+    android:text="@string/history_str"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/profile_user_place" />
 
-    <Button
-        android:id="@+id/prof_green_block"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="10dp"
-        android:height="50dp"
-        android:background="@drawable/roundshape"
-        android:backgroundTint="@color/colorGreen47"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<TextView
+    android:id="@+id/profile_result_text"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:background="@color/colorGreen57"
+    style="@style/StandardText"
+    android:text="@string/result_str"
+    android:textStyle="bold"
+    app:layout_constraintRight_toLeftOf="@id/profile_rating_text"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/profile_history" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/reg_emblema_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/prof_green_block"
-        app:layout_constraintEnd_toEndOf="@+id/prof_green_block"
-        app:layout_constraintStart_toStartOf="@+id/prof_green_block"
-        app:layout_constraintTop_toTopOf="@+id/prof_green_block"
-        app:srcCompat="@drawable/emblema"/>
+<TextView
+    android:id="@+id/profile_rating_text"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:background="@color/colorGreen57"
+    style="@style/StandardText"
+    android:textStyle="bold"
+    android:text="@string/rank_str"
+    app:layout_constraintLeft_toRightOf="@id/profile_result_text"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/profile_history" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/profile_history_recycler"
+    android:layout_width="0dp"
+    android:layout_height="130dp"
+    android:layout_marginHorizontal="5dp"
+    android:background="@drawable/table_bottom_shape"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/profile_rating_text"
+    tools:listitem="@layout/recycler_elem"/>
 
 
-    <ImageView
-        android:id="@+id/player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginVertical="25dp"
-        android:elevation="3dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_green_block"
-        app:srcCompat="@drawable/loginshapebutton" />
+<TextView
+    android:id="@+id/profile_rating_table"
+    style="@style/InfoText"
+    android:layout_width="match_parent"
+    android:layout_marginHorizontal="5dp"
+    android:height="30dp"
+    android:background="@drawable/table_shape"
+    android:gravity="center_horizontal"
+    android:text="@string/players_rating"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/profile_history_recycler" />
 
-    <Button
-        android:id="@+id/prof_username"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="10dp"
-        android:height="80dp"
-        android:background="@drawable/roundshape"
-        android:backgroundTint="@color/colorGreen47"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_green_block" />
+<TextView
+    android:id="@+id/profile_player_login"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:background="@color/colorGreen57"
+    style="@style/StandardText"
+    android:textStyle="bold"
+    android:text="@string/players_login"
+    app:layout_constraintRight_toLeftOf="@id/profile_rating_text"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/profile_rating_table" />
 
-    <TextView
-        android:id="@+id/player_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="35dp"
-        android:text="@string/player1_name"
-        android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/player"
-        app:layout_constraintTop_toBottomOf="@+id/prof_green_block" />
+<TextView
+    android:id="@+id/profile_player_rating"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:background="@color/colorGreen57"
+    style="@style/StandardText"
+    android:textStyle="bold"
+    android:text="@string/rank_str"
+    app:layout_constraintLeft_toRightOf="@id/profile_result_text"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/profile_rating_table" />
 
-    <TextView
-        android:id="@+id/user_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginVertical="35dp"
-        android:text="@string/score_str"
-        android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_green_block" />
-
-    <Button
-        android:id="@+id/history"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="10dp"
-        android:height="200dp"
-        android:background="@drawable/roundshape"
-        android:backgroundTint="@color/colorGreen47"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_username" />
-
-    <TextView
-        android:id="@+id/history_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginVertical="35dp"
-        android:text="@string/history_str"
-        android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/history"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/history"
-        app:layout_constraintTop_toTopOf="@+id/history" />
-
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/profile_players_rating_recycler"
+    android:layout_width="0dp"
+    android:layout_height="130dp"
+    android:layout_marginHorizontal="5dp"
+    android:background="@drawable/table_bottom_shape"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/profile_player_rating"
+    tools:listitem="@layout/recycler_elem"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,13 @@
 
     <!-- Оттенки -->
     <color name="colorGreen47">#783D942F</color>
+    <color name="colorGreen10">#1A3D942F</color>
     <color name="colorYellow40">#66CFA504</color>
+    <color name="colorGreen57">#91A0C999</color>
+    <color name="colorYellow21">#36CFA504</color>
+    <color name="colorRed47">#78942F47</color>
+
 
     <color name="colorError">#9E1818</color>
+    <color name="colorHint">#808080</color>
 </resources>
