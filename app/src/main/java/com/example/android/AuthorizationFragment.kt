@@ -48,9 +48,21 @@ class AuthorizationFragment : Fragment() {
         }
 
         auth_google_button.setOnClickListener{
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/web/google"))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/google"))
             startActivity(browserIntent)
             //TODO: Реализовать авторизацию через гугл
+        }
+
+        auth_vk_button.setOnClickListener{
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/vk"))
+            startActivity(browserIntent)
+            //TODO: Реализовать авторизацию через vk
+        }
+
+        auth_yandex_button.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/yandex"))
+            startActivity(browserIntent)
+            //TODO: Реализовать авторизацию через yandex
         }
 
         auth_to_choose_button.setOnClickListener {

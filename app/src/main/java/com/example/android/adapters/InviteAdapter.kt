@@ -12,10 +12,14 @@ import com.example.android.dataClasses.InviteClass
 import io.github.centrifugal.centrifuge.Client
 
 
-class InviteAdapter (private val context: Context, private val client: Client, private val invites: MutableList<InviteClass>):
-    RecyclerView.Adapter<InviteAdapter.InviteViewHolder>(){
+class InviteAdapter(
+    private val context: Context,
+    private val client: Client,
+    private val invites: MutableList<InviteClass>
+) :
+    RecyclerView.Adapter<InviteAdapter.InviteViewHolder>() {
 
-    class InviteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class InviteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val inviterView: TextView = itemView.findViewById(R.id.auth_welcome_eng_text)
         val acceptButtonView: Button = itemView.findViewById(R.id.accept_button)
         val refuseButtonView: Button = itemView.findViewById(R.id.refuse_button)
@@ -23,26 +27,25 @@ class InviteAdapter (private val context: Context, private val client: Client, p
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InviteViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.invite_elem_recycle, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.invite_elem_recycle, parent, false)
         return InviteViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: InviteViewHolder, position: Int) {
         holder.inviterView.text = invites[position].getUser()
-        holder.acceptButtonView.setOnClickListener{
+        holder.acceptButtonView.setOnClickListener {
             //Отправление сообщение о принятии приглашения
             val callAccept = "{\"game_id\": " + invites[position].getId() + "}"
             client.rpc(
                 "accept_game_invitation", callAccept.toByteArray()
-            ) { _, _ -> }
-            if (context is MainActivity) {
-                val bundle = Bundle()
-                bundle.putString("gameID", invites[position].getId().toString())
-                context.startGameToGameDesk()
+            ) { e, _ ->
+                if (e == null && context is MainActivity) context.startGameToGameDesk()
+                else if (context is MainActivity) context.runOnUiThread { context.makeToast("time has run out") }
             }
             removeItem(position)
         }
-        holder.refuseButtonView.setOnClickListener{
+        holder.refuseButtonView.setOnClickListener {
             //Отправление сообщение об отказе от приглашения
             val callRefuse = "{\"game_id\": " + invites[position].getId() + "}"
             client.rpc(

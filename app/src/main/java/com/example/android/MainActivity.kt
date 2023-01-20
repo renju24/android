@@ -11,6 +11,8 @@ import androidx.navigation.fragment.NavHostFragment
 import io.github.centrifugal.centrifuge.*
 import io.github.centrifugal.centrifuge.EventListener
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_authorization.*
+import kotlinx.android.synthetic.main.fragment_registration.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Response
@@ -31,8 +33,11 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment
         navController = navHostFragment.navController
 
-        help_button.setOnClickListener{
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ru.wikipedia.org/wiki/%D0%A0%D1%8D%D0%BD%D0%B4%D0%B7%D1%8E"))
+        help_button.setOnClickListener {
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://ru.wikipedia.org/wiki/%D0%A0%D1%8D%D0%BD%D0%B4%D0%B7%D1%8E")
+            )
             startActivity(browserIntent)
         }
     }
@@ -79,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.action_start_to_game)
     }
 
-    fun authToGame(){
+    fun authToGame() {
         navController.navigate(R.id.action_auth_to_game)
     }
 
@@ -87,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         navController.popBackStack()
     }
 
-    fun connectToWebSocketServer(){
+    fun connectToWebSocketServer() {
         val opts = Options()
         opts.token = getToken()
         client = Client("wss://renju24.com/connection/websocket", opts, listener)
@@ -125,7 +130,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Отправка запроса на регистрацию/авторизацию пользователя
-    fun checkUserData(response : Response<ResponseBody>, name: String){
+    fun checkUserData(response: Response<ResponseBody>, name: String) {
         val code = response.code()
         if (code != 200) {
             val jObjError = JSONObject(response.errorBody()!!.string())
@@ -139,7 +144,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun subscribeToTopic(topic:String, subListener: SubscriptionEventListener){
+    fun subscribeToTopic(topic: String, subListener: SubscriptionEventListener) {
         var sub: Subscription? = null
         try {
             sub = client.newSubscription(topic, subListener)
@@ -149,11 +154,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun setUserID(id: Int){
+    fun setUserID(id: Int) {
         userID = id
     }
 
-    fun getUserID(): Int{
+    fun getUserID(): Int {
         return userID
+    }
+
+    override fun onBackPressed() {
+        val previous = navController.previousBackStackEntry?.destination
+
+        if (previous?.id == R.id.authorizationFragment || previous?.id == R.id.registrationFragment) finish()
+        else super.onBackPressed()
     }
 }

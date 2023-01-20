@@ -63,15 +63,19 @@ class StartGameFragment : Fragment() {
                                     Gson().fromJson(playerAnswer, JsonObject::class.java)
                                 if (playerAnswerObject.get("event_type").asString == "decline_game_invitation") {
                                     sub!!.unsubscribe()
-                                    (requireActivity() as MainActivity).client.removeSubscription(sub!!)
+                                    (requireActivity() as MainActivity).client.removeSubscription(
+                                        sub
+                                    )
                                     Log.i("centrifugalSubscription", "decline_game_invitation")
                                 } else if (playerAnswerObject.get("event_type").asString == "game_started") {
                                     sub!!.unsubscribe()
-                                    (requireActivity() as MainActivity).client.removeSubscription(sub!!)
+                                    (requireActivity() as MainActivity).client.removeSubscription(
+                                        sub
+                                    )
                                     (requireActivity() as MainActivity).startGameToGameDesk()
                                 }
                             }
-                       }
+                        }
                     }
 
                 (requireActivity() as MainActivity).subscribeToTopic(
@@ -110,10 +114,14 @@ class StartGameFragment : Fragment() {
                     val inviteObject: EventInviteClass =
                         Gson().fromJson(invite, EventInviteClass::class.java)
                     if (inviteObject.getEventType() == "game_invitation") {
+                        var isAdded = false
                         val gameId = inviteObject.getEventData().getId()
                         val inviterName = inviteObject.getEventData().getOpponent()
-                        invitesList.add(InviteClass(gameId, inviterName))
-                        start_invite_recycler.post { adapter.notifyItemInserted(invitesList.size - 1) }
+                        for (i in invitesList) if (i.getUser() == inviterName) isAdded = true
+                        if (!isAdded) {
+                            invitesList.add(InviteClass(gameId, inviterName))
+                            start_invite_recycler.post { adapter.notifyItemInserted(invitesList.size - 1) }
+                        }
                     }
                 }
             }
