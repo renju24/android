@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_auth_to_profile"
             app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_auth_to_game"
+            app:destination="@id/gameDeskFragment" />
     </fragment>
     <fragment
         android:id="@+id/chooseRegistrationFragment"

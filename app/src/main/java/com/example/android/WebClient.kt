@@ -31,16 +31,4 @@ interface WebClientService {
     fun postLoginAccount(
         @Body loginUser: LoginClass
     ): Call<ResponseBody>
-
-
-    @GET("oauth2/android/{type}")
-    fun getOAuth(
-        @Path("type") type: String,
-    ): Call<ResponseBody>
-
-    @GET("get_user")
-    fun getUser(
-        @Query("username") username: String
-    ): Call<ResponseBody>
-
 }

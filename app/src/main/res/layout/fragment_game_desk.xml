@@ -28,23 +28,13 @@
     <TextView
         android:id="@+id/game_player1_name"
         style="@style/InfoText"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:elevation="2dp"
         android:text="@string/username"
-        app:layout_constraintStart_toEndOf="@+id/player1"
-        app:layout_constraintTop_toTopOf="@+id/player1" />
-
-    <TextView
-        android:id="@+id/game_player1_text"
-        style="@style/InfoText"
-        android:layout_marginVertical="10dp"
-        android:layout_marginStart="10dp"
-        android:elevation="2dp"
-        android:text="@string/game_player_str"
-        android:textSize="16sp"
+        android:textSize = "18dp"
         app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
         app:layout_constraintStart_toEndOf="@+id/player1"
-        app:layout_constraintTop_toBottomOf="@+id/game_player1_name" />
+        app:layout_constraintTop_toTopOf="@+id/game_players_place" />
 
     <ImageView
         android:id="@+id/player2"
@@ -61,10 +51,10 @@
     <TextView
         android:id="@+id/game_player2_name"
         style="@style/InfoText"
+        android:layout_marginEnd="5dp"
         android:elevation="2dp"
+        android:textSize = "18dp"
         android:text="@string/username2"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
         app:layout_constraintEnd_toStartOf="@+id/player2"
         app:layout_constraintTop_toTopOf="@+id/game_players_place" />
@@ -74,7 +64,6 @@
         style="@style/InfoText"
         android:elevation="2dp"
         android:text="@string/vs_str"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
         app:layout_constraintEnd_toStartOf="@+id/game_player2_name"
         app:layout_constraintStart_toEndOf="@+id/game_player1_name"
@@ -89,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/game_players_place" />
 
     <TextView
-        android:id="@+id/game_inf_step"
+        android:id="@+id/game_info_step"
         style="@style/InfoText"
         android:elevation="2dp"
         android:text="@string/inf_step_str"
@@ -107,6 +96,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game_inf_place" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/game_board_recycler"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_inf_place"
+        tools:listitem="@layout/game_elem"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

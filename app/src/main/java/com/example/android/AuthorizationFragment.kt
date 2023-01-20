@@ -1,18 +1,20 @@
 package com.example.android
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.android.dataClasses.LoginClass
-import com.example.android.dataClasses.UserClass
 import kotlinx.android.synthetic.main.fragment_authorization.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class AuthorizationFragment : Fragment() {
     private val webClient = WebClient().getApi()
@@ -46,7 +48,8 @@ class AuthorizationFragment : Fragment() {
         }
 
         auth_google_button.setOnClickListener{
-            val callAuth = webClient.getOAuth("google")
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/web/google"))
+            startActivity(browserIntent)
             //TODO: Реализовать авторизацию через гугл
         }
 

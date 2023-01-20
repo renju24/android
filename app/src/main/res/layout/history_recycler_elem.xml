@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recycler_elem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/black_user_text"
+            style="@style/StandardText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@color/colorGreen57"
+            android:gravity="center"
+            android:text="@string/black_user"
+            app:layout_constraintEnd_toStartOf="@+id/white_user_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/white_user_text"
+            style="@style/StandardText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@color/colorGreen57"
+            android:gravity="center"
+            android:text="@string/white_user"
+            app:layout_constraintEnd_toStartOf="@+id/winner_text"
+            app:layout_constraintStart_toEndOf="@+id/black_user_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/winner_text"
+            style="@style/StandardText"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@color/colorGreen57"
+            android:gravity="center"
+            android:text="@string/winner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/white_user_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

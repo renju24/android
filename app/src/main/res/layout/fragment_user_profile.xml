@@ -60,105 +60,121 @@ android:layout_height="match_parent">
     app:layout_constraintTop_toTopOf="@+id/profile_user_place" />
 
 
-<TextView
-    android:id="@+id/profile_history"
-    style="@style/InfoText"
-    android:layout_width="match_parent"
-    android:layout_marginHorizontal="5dp"
-    android:height="30dp"
-    android:background="@drawable/table_shape"
-    android:gravity="center_horizontal"
-    android:text="@string/history_str"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_user_place" />
+    <TextView
+        android:id="@+id/profile_history"
+        style="@style/InfoText"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:height="30dp"
+        android:background="@drawable/table_shape"
+        android:gravity="center_horizontal"
+        android:text="@string/history_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_user_place" />
 
-<TextView
-    android:id="@+id/profile_result_text"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:background="@color/colorGreen57"
-    style="@style/StandardText"
-    android:text="@string/result_str"
-    android:textStyle="bold"
-    app:layout_constraintRight_toLeftOf="@id/profile_rating_text"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/profile_history" />
+    <TextView
+        android:id="@+id/black_user_text"
+        style="@style/StandardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen57"
+        android:layout_marginStart="5dp"
+        android:text="@string/black_user"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/white_user_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history"/>
 
-<TextView
-    android:id="@+id/profile_rating_text"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="5dp"
-    android:background="@color/colorGreen57"
-    style="@style/StandardText"
-    android:textStyle="bold"
-    android:text="@string/rank_str"
-    app:layout_constraintLeft_toRightOf="@id/profile_result_text"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/profile_history" />
+    <TextView
+        android:id="@+id/white_user_text"
+        style="@style/StandardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen57"
+        android:text="@string/white_user"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/winner_text"
+        app:layout_constraintStart_toEndOf="@+id/black_user_text"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history"/>
+
+    <TextView
+        android:id="@+id/winner_text"
+        style="@style/StandardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen57"
+        android:layout_marginEnd="5dp"
+        android:text="@string/winner"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/white_user_text"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history"/>
+
+
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/profile_history_recycler"
     android:layout_width="0dp"
     android:layout_height="130dp"
     android:layout_marginHorizontal="5dp"
+    android:scrollbars="horizontal"
     android:background="@drawable/table_bottom_shape"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_rating_text"
-    tools:listitem="@layout/recycler_elem"/>
+    app:layout_constraintTop_toBottomOf="@+id/winner_text"
+    tools:listitem="@layout/history_recycler_elem"/>
 
 
-<TextView
-    android:id="@+id/profile_rating_table"
-    style="@style/InfoText"
-    android:layout_width="match_parent"
-    android:layout_marginHorizontal="5dp"
-    android:height="30dp"
-    android:background="@drawable/table_shape"
-    android:gravity="center_horizontal"
-    android:text="@string/players_rating"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_history_recycler" />
+    <TextView
+        android:id="@+id/profile_rating_table"
+        style="@style/InfoText"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:height="30dp"
+        android:background="@drawable/table_shape"
+        android:gravity="center_horizontal"
+        android:text="@string/players_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_history_recycler" />
 
-<TextView
-    android:id="@+id/profile_player_login"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:background="@color/colorGreen57"
-    style="@style/StandardText"
-    android:textStyle="bold"
-    android:text="@string/players_login"
-    app:layout_constraintRight_toLeftOf="@id/profile_rating_text"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/profile_rating_table" />
+    <TextView
+        android:id="@+id/top_login_text"
+        style="@style/StandardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen57"
+        android:layout_marginStart="5dp"
+        android:text="@string/log_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/top_rating_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_rating_table" />
 
-<TextView
-    android:id="@+id/profile_player_rating"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="5dp"
-    android:background="@color/colorGreen57"
-    style="@style/StandardText"
-    android:textStyle="bold"
-    android:text="@string/rank_str"
-    app:layout_constraintLeft_toRightOf="@id/profile_result_text"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/profile_rating_table" />
+    <TextView
+        android:id="@+id/top_rating_text"
+        style="@style/StandardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen57"
+        android:layout_marginEnd="5dp"
+        android:text="@string/rank_str"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/top_login_text"
+        app:layout_constraintTop_toBottomOf="@+id/profile_rating_table" />
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/profile_players_rating_recycler"
     android:layout_width="0dp"
     android:layout_height="130dp"
     android:layout_marginHorizontal="5dp"
+    android:scrollbars="horizontal"
     android:background="@drawable/table_bottom_shape"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_player_rating"
-    tools:listitem="@layout/recycler_elem"/>
+    app:layout_constraintTop_toBottomOf="@+id/top_rating_text"
+    tools:listitem="@layout/rating_recycler_elem"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

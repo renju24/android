@@ -15,7 +15,7 @@
     <string name="reg_with_str">Зарегистрироваться через</string>
     <string name="choose_reg_str">Выберите способ регистрации</string>
 
-    <string name="username">RenjuKing</string>
+    <string name="username">Player1</string>
     <string name="rating">Рейтинг: 0</string>
     <string name="play">Играть</string>
     <string name="history_str">История игр</string>
@@ -23,9 +23,9 @@
     <string name="rank_str">Рейтинг</string>
     <string name="players_rating">Общий рейтинг игроков</string>
     <string name="players_login">Логин</string>
-    <string name="log_and_res">Результат/Логин</string>
+    <string name="log_text">Логин</string>
 
-    <string name="new_game_str">Чтобы начать игру, введите login игрока:</string>
+    <string name="new_game_str">Чтобы начать игру, введите имя игрока:</string>
     <string name="invite_str">Пригласить</string>
     <string name="table_invite_str">Список приглашений</string>
     <string name="time_str">5 мин. н.</string>
@@ -34,7 +34,7 @@
     <string name="refuse_str">Отклонить</string>
 
     <string name="game_player_str">(Вы)</string>
-    <string name="username2">CoolGuy</string>
+    <string name="username2">Player2</string>
     <string name="vs_str">vs</string>
     <string name="inf_step_str">Информация о ходах</string>
 
@@ -42,4 +42,22 @@
     <string name="err_reg_empty">Вы заполнили не все поля</string>
     <string name="err_reg_msg">Вы не заполнили поле </string>
     <string name="err_reg_pass">Пароли не совпадают</string>
+
+    <string name="black_user">Чёрная сторона</string>
+    <string name="white_user">Белая сторона</string>
+    <string name="winner">Победитель</string>
+
+    <string name="find_users_str">Результаты поиска</string>
+    <string name="find_str">Найти</string>
+    <string name="refuse_game_str">Ваше приглашение не принято или время истекло</string>
+
+    <string name="err423">Первый ход должны делать черные</string>
+    <string name="err424">Первый ход должен быть в центр доски</string>
+    <string name="err425">Координаты выходят за пределы доски</string>
+    <string name="err426">Поле уже занято</string>
+    <string name="err427">Не ваш ход</string>
+
+    <string name="draw">Игра закончилась без победителя (ничья)</string>
+    <string name="win">Игра закончилась с победителем</string>
+
 </resources>
