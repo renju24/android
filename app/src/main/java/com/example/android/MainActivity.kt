@@ -11,12 +11,9 @@ import androidx.navigation.fragment.NavHostFragment
 import io.github.centrifugal.centrifuge.*
 import io.github.centrifugal.centrifuge.EventListener
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_authorization.*
-import kotlinx.android.synthetic.main.fragment_registration.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Response
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -145,7 +142,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun subscribeToTopic(topic: String, subListener: SubscriptionEventListener) {
-        var sub: Subscription? = null
+        var sub: Subscription?
         try {
             sub = client.newSubscription(topic, subListener)
             sub.subscribe()
@@ -167,5 +164,14 @@ class MainActivity : AppCompatActivity() {
 
         if (previous?.id == R.id.authorizationFragment || previous?.id == R.id.registrationFragment) finish()
         else super.onBackPressed()
+    }
+
+    fun showDialog(title: String, message: String){
+        val dialogFragment = DialogGameFragment(
+            title,
+            message
+        )
+        val manager = supportFragmentManager
+        dialogFragment.show(manager, "dialog")
     }
 }

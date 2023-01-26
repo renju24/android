@@ -51,10 +51,7 @@
             style="@style/TextInputFieldDesign"
             android:hint="@string/login_name_str"
             android:inputType="textPersonName"
-            android:maxLength="20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_reg_layout" />
+            android:maxLength="20"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -70,10 +67,7 @@
             style="@style/TextInputFieldDesign"
             android:hint="@string/reg_email_str"
             android:inputType="textEmailAddress"
-            android:maxLength="255"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_reg_layout" />
+            android:maxLength="255"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

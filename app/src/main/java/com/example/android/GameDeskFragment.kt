@@ -44,11 +44,10 @@ class GameDeskFragment : Fragment() {
                     Gson().fromJson(gameEvent, JsonObject::class.java).get("event_type")
                 when (dataObject.asString) {
                     "game_ended_in_draw" -> {
-                        val dialogFragment = DialogGameFragment(
+                        (requireActivity() as MainActivity).showDialog(
+                            "Конец игры",
                             (requireActivity() as MainActivity).resources.getString(R.string.draw)
                         )
-                        val manager = (requireActivity() as MainActivity).supportFragmentManager
-                        dialogFragment.show(manager, "dialogDraw")
                     }
 
                     "game_ended_with_winner" -> {
@@ -56,12 +55,11 @@ class GameDeskFragment : Fragment() {
                             Gson().fromJson(gameEvent, JsonObject::class.java).get("data")
                         val winnerID = Gson().fromJson(winnerObject, JsonObject::class.java)
                             .get("winner_id").asInt
-                        val dialogFragment = DialogGameFragment(
+                        (requireActivity() as MainActivity).showDialog(
+                            "Конец игры",
                             (requireActivity() as MainActivity).resources.getString(R.string.win) + " "
                                     + if (winnerID == (requireActivity() as MainActivity).getUserID()) game_player1_name.text else game_player2_name.text
                         )
-                        val manager = (requireActivity() as MainActivity).supportFragmentManager
-                        dialogFragment.show(manager, "dialogWin")
                     }
 
                     "move" -> {
@@ -72,7 +70,7 @@ class GameDeskFragment : Fragment() {
                         if (chipList[pos].getColor() == "no") {
                             if (userColor == "black") chipList[pos].setColor("white")
                             else chipList[pos].setColor("black")
-                            game_board_recycler.post{adapter.notifyItemChanged(pos)}
+                            game_board_recycler.post { adapter.notifyItemChanged(pos) }
                         }
 
                     }

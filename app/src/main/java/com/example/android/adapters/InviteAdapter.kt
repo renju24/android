@@ -33,7 +33,7 @@ class InviteAdapter(
     }
 
     override fun onBindViewHolder(holder: InviteViewHolder, position: Int) {
-        holder.inviterView.text = invites[position].getUser()
+        holder.inviterView.text = "Игрок " + invites[position].getUser() + " приглашает вас в игру!"
         holder.acceptButtonView.setOnClickListener {
             //Отправление сообщение о принятии приглашения
             val callAccept = "{\"game_id\": " + invites[position].getId() + "}"

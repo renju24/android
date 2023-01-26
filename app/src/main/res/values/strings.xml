@@ -26,10 +26,13 @@
     <string name="log_text">Логин</string>
 
     <string name="new_game_str">Чтобы начать игру, введите имя игрока:</string>
+    <string name="unfinished_game_str">Продолжите игру с user или завершите, чтобы начать новую:</string>
     <string name="invite_str">Пригласить</string>
     <string name="table_invite_str">Список приглашений</string>
     <string name="time_str">5 мин. н.</string>
-    <string name="invite_mess_str">Игрок User приглашает вас в игру!</string>
+    <string name="invite_mess_str">Игрок user приглашает вас в игру!</string>
+    <string name="cont_str">Продолжить</string>
+    <string name="finish_str">Завершить</string>
     <string name="accept_str">Принять</string>
     <string name="refuse_str">Отклонить</string>
 
@@ -57,6 +60,7 @@
     <string name="err426">Поле уже занято</string>
     <string name="err427">Не ваш ход</string>
 
+    <string name="decline">отказался от игры</string>
     <string name="draw">Игра закончилась без победителя (ничья)</string>
     <string name="win">Игра закончилась с победителем</string>
 
