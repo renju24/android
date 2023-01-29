@@ -36,3 +36,16 @@ data class GameInfoClass(
         return opponent
     }
 }
+
+data class GameLeaveClass(
+    val who_left_game: Int,
+    val winner_id: Int
+) {
+    fun getWhoLeftID():Int{
+        return who_left_game
+    }
+
+    fun getWinnerID():Int{
+        return winner_id
+    }
+}

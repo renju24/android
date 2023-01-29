@@ -60,8 +60,16 @@ class GameBoardAdapter(
                             "invalid turn" -> context.game_info_step.text =
                                 context.getResources().getString(R.string.err427)
                             "" -> {
-                                context.game_info_step.text = ""
+
                                 chipList[position].setColor(color)
+                                if (chipList[position].getColor() == "black") {
+                                    context.game_info_step.text =
+                                        context.resources.getString(R.string.white_move)
+                                } else {
+                                    context.game_info_step.text =
+                                        context.resources.getString(R.string.black_move)
+                                }
+                               // context.game_info_step.text = chipList[position].getColor()
                                 notifyItemChanged(position)
                             }
 

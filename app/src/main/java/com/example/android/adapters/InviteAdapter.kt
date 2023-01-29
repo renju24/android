@@ -14,10 +14,11 @@ import io.github.centrifugal.centrifuge.Client
 
 class InviteAdapter(
     private val context: Context,
-    private val client: Client,
-    private val invites: MutableList<InviteClass>
+    private val client: Client
+  //  private val invites: MutableList<InviteClass>
 ) :
     RecyclerView.Adapter<InviteAdapter.InviteViewHolder>() {
+    private var invitesList = mutableListOf<InviteClass>()
 
     class InviteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val inviterView: TextView = itemView.findViewById(R.id.auth_welcome_eng_text)
@@ -33,21 +34,23 @@ class InviteAdapter(
     }
 
     override fun onBindViewHolder(holder: InviteViewHolder, position: Int) {
-        holder.inviterView.text = "Игрок " + invites[position].getUser() + " приглашает вас в игру!"
+        holder.inviterView.text = "Игрок " + invitesList[position].getUser() + " приглашает вас в игру!"
         holder.acceptButtonView.setOnClickListener {
             //Отправление сообщение о принятии приглашения
-            val callAccept = "{\"game_id\": " + invites[position].getId() + "}"
+            val callAccept = "{\"game_id\": " + invitesList[position].getId() + "}"
             client.rpc(
                 "accept_game_invitation", callAccept.toByteArray()
             ) { e, _ ->
-                if (e == null && context is MainActivity) context.startGameToGameDesk()
+                val bundle = Bundle()
+                bundle.putInt("game_id", 0)
+                if (e == null && context is MainActivity) context.startGameToGameDesk(bundle)
                 else if (context is MainActivity) context.runOnUiThread { context.makeToast("time has run out") }
             }
             removeItem(position)
         }
         holder.refuseButtonView.setOnClickListener {
             //Отправление сообщение об отказе от приглашения
-            val callRefuse = "{\"game_id\": " + invites[position].getId() + "}"
+            val callRefuse = "{\"game_id\": " + invitesList[position].getId() + "}"
             client.rpc(
                 "decline_game_invitation", callRefuse.toByteArray()
             ) { _, _ -> }
@@ -55,11 +58,19 @@ class InviteAdapter(
         }
     }
 
-    override fun getItemCount() = invites.size
+    override fun getItemCount() = invitesList.size
 
     private fun removeItem(position: Int) {
-        invites.removeAt(position)
+        invitesList.removeAt(position)
         notifyItemRemoved(position)
-        notifyItemRangeChanged(position, invites.size)
+        notifyItemRangeChanged(position, invitesList.size)
     }
+
+    fun addItem(item: InviteClass) {
+        invitesList.add(item)
+        notifyItemInserted(invitesList.size-1)
+    }
+
+    fun getInvitesList() = invitesList
+
 }

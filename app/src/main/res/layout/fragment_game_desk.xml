@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/game_players_place"
         style="@style/Place"
-        android:layout_height="80dp"
+        android:layout_height="130dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,8 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="2dp"
+        android:layout_marginTop="15dp"
         android:layout_marginHorizontal="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
         app:layout_constraintStart_toStartOf="@+id/game_players_place"
         app:layout_constraintTop_toTopOf="@+id/game_players_place"
         app:srcCompat="@drawable/black_elem" />
@@ -28,21 +28,22 @@
     <TextView
         android:id="@+id/game_player1_name"
         style="@style/InfoText"
+        android:layout_width="110dp"
         android:layout_marginStart="5dp"
         android:elevation="2dp"
         android:text="@string/username"
-        android:textSize = "18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player1"
         app:layout_constraintStart_toEndOf="@+id/player1"
-        app:layout_constraintTop_toTopOf="@+id/game_players_place" />
+        app:layout_constraintTop_toTopOf="@+id/player1" />
 
     <ImageView
         android:id="@+id/player2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="15dp"
         android:elevation="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
         app:layout_constraintEnd_toEndOf="@+id/game_players_place"
         app:layout_constraintTop_toTopOf="@+id/game_players_place"
         app:srcCompat="@drawable/white_elem" />
@@ -51,23 +52,39 @@
     <TextView
         android:id="@+id/game_player2_name"
         style="@style/InfoText"
+        android:layout_width="110dp"
         android:layout_marginEnd="5dp"
         android:elevation="2dp"
-        android:textSize = "18dp"
         android:text="@string/username2"
-        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player2"
         app:layout_constraintEnd_toStartOf="@+id/player2"
-        app:layout_constraintTop_toTopOf="@+id/game_players_place" />
+        app:layout_constraintTop_toTopOf="@+id/player2" />
 
     <TextView
         android:id="@+id/game_vs"
         style="@style/InfoText"
         android:elevation="2dp"
         android:text="@string/vs_str"
-        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
+        app:layout_constraintBottom_toBottomOf="@+id/game_player1_name"
         app:layout_constraintEnd_toStartOf="@+id/game_player2_name"
         app:layout_constraintStart_toEndOf="@+id/game_player1_name"
-        app:layout_constraintTop_toTopOf="@+id/game_players_place" />
+        app:layout_constraintTop_toTopOf="@+id/game_player1_name" />
+
+    <Button
+        android:id="@+id/game_decline_button"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/invite_shape_red"
+        android:text="@string/surrender_str"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/game_players_place"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/game_players_place"
+      />
 
     <ImageView
         android:id="@+id/game_inf_place"

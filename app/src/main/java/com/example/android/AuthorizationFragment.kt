@@ -1,5 +1,6 @@
 package com.example.android
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -7,6 +8,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.example.android.dataClasses.LoginClass
 import kotlinx.android.synthetic.main.fragment_authorization.*
@@ -45,27 +48,26 @@ class AuthorizationFragment : Fragment() {
                     Log.d("renjuInf", "Response = $t")
                 }
             })
+            (requireActivity() as MainActivity).hideKeyboard()
         }
 
         auth_google_button.setOnClickListener{
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/google"))
             startActivity(browserIntent)
-            //TODO: Реализовать авторизацию через гугл
         }
 
         auth_vk_button.setOnClickListener{
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/vk"))
             startActivity(browserIntent)
-            //TODO: Реализовать авторизацию через vk
         }
 
         auth_yandex_button.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://renju24.com/api/v1/oauth2/android/yandex"))
             startActivity(browserIntent)
-            //TODO: Реализовать авторизацию через yandex
         }
 
         auth_to_choose_button.setOnClickListener {
+            (requireActivity() as MainActivity).hideKeyboard()
             (requireActivity() as MainActivity).authToChooseReg()
         }
 

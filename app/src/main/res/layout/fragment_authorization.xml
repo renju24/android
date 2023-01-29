@@ -93,19 +93,19 @@
         android:background="@drawable/enter_google_shape" />
 
     <ImageButton
-        android:id="@+id/auth_vk_button"
+        android:id="@+id/auth_yandex_button"
         style="@style/PlatformImageButton"
-        app:layout_constraintEnd_toStartOf="@+id/auth_yandex_button"
+        app:layout_constraintEnd_toStartOf="@+id/auth_vk_button"
         app:layout_constraintStart_toEndOf="@+id/auth_google_button"
         app:layout_constraintTop_toBottomOf="@+id/auth_to_profile_button"
-        android:background="@drawable/enter_vk_shape"
+        android:background="@drawable/enter_yandex_shape"
         />
 
     <ImageButton
-        android:id="@+id/auth_yandex_button"
+        android:id="@+id/auth_vk_button"
         style="@style/PlatformImageButton"
         android:layout_marginHorizontal="50dp"
-        android:background="@drawable/enter_yandex_shape"
+        android:background="@drawable/enter_vk_shape"
         app:layout_constraintEnd_toEndOf="@+id/auth_text"
         app:layout_constraintTop_toBottomOf="@+id/auth_to_profile_button"
         />
@@ -119,7 +119,7 @@
         android:text="@string/log_to_reg_str"
         app:layout_constraintEnd_toEndOf="@+id/auth_text"
         app:layout_constraintStart_toStartOf="@+id/auth_text"
-        app:layout_constraintTop_toBottomOf="@+id/auth_vk_button" />
+        app:layout_constraintTop_toBottomOf="@+id/auth_yandex_button" />
 
     <Button
         android:id="@+id/auth_to_choose_button"

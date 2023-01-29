@@ -8,4 +8,6 @@ data class MoveClass (
     fun getX() = x_coordinate
 
     fun getY() = y_coordinate
+
+    fun getUserID() = user_id
 }

@@ -26,7 +26,7 @@
     <string name="log_text">Логин</string>
 
     <string name="new_game_str">Чтобы начать игру, введите имя игрока:</string>
-    <string name="unfinished_game_str">Продолжите игру с user или завершите, чтобы начать новую:</string>
+    <string name="unfinished_game_str">У вас незаконченная игра с пользователем</string>
     <string name="invite_str">Пригласить</string>
     <string name="table_invite_str">Список приглашений</string>
     <string name="time_str">5 мин. н.</string>
@@ -34,7 +34,8 @@
     <string name="cont_str">Продолжить</string>
     <string name="finish_str">Завершить</string>
     <string name="accept_str">Принять</string>
-    <string name="refuse_str">Отклонить</string>
+    <string name="refuse_str">Отказаться</string>
+    <string name="surrender_str">Сдаться</string>
 
     <string name="game_player_str">(Вы)</string>
     <string name="username2">Player2</string>
@@ -59,9 +60,11 @@
     <string name="err425">Координаты выходят за пределы доски</string>
     <string name="err426">Поле уже занято</string>
     <string name="err427">Не ваш ход</string>
+    <string name="black_move">Ход чёрных</string>
+    <string name="white_move">Ход белый</string>
 
     <string name="decline">отказался от игры</string>
     <string name="draw">Игра закончилась без победителя (ничья)</string>
     <string name="win">Игра закончилась с победителем</string>
-
+    <string name="no_win">Партия не состоялась</string>
 </resources>

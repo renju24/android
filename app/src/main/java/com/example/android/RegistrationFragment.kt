@@ -1,10 +1,12 @@
 package com.example.android
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import com.example.android.dataClasses.UserClass
 import kotlinx.android.synthetic.main.fragment_registration.*
@@ -51,9 +53,11 @@ class RegistrationFragment : Fragment() {
                     Log.d("renjuInf", "Response = $t")
                 }
             })
+            (requireActivity() as MainActivity).hideKeyboard()
         }
 
         reg_to_auth_button.setOnClickListener {
+            (requireActivity() as MainActivity).hideKeyboard()
             (requireActivity() as MainActivity).toAuthorization()
         }
 
