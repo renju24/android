@@ -44,7 +44,6 @@
 
 - **Язык:** Kotlin
 - **Минимальная версия Android:** 4.4 (API 19)
-- **Архитектура:** MVVM
 - **Сетевое взаимодействие:** Retrofit, OkHttp
 - **WebSockets:** Centrifuge
 - **Сериализация:** Gson
